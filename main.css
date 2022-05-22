@@ -1,0 +1,33 @@
+html{
+    text-align: center;
+}
+main{
+    display: grid;
+    height: 500px;
+    grid-template: 1fr/ 1fr 1fr 1fr 1fr;
+    grid-template-areas: "head"
+                         "hero"
+                         "story"
+                         "footer" ;
+}
+
+#story{
+    grid-area: story;
+}
+
+.button{
+    border: 1px solid black;
+    color: black;
+    padding: 13px;
+    background-color: rgb(255, 255, 4);
+    border-radius: 10%;
+}
+.button:hover{
+    background-color: rgb(71, 71, 197);
+    cursor: pointer;
+}
+
+.button:active{
+    color: white;
+    padding: 10px;
+}
