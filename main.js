@@ -1,5 +1,5 @@
 let messagesObject ={
-    _messages: ['A', 'B', 'C'],
+    _messages: ['France', 'Italy', 'Bavaria','South Africa'],
     set messages(inputMessages){
         this._messages = inputMessages;
     },
