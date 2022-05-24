@@ -14,7 +14,7 @@
 <body>
   <main>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-sm navbar-light sticky-top">
+    <nav class="navbar navbar-expand-sm navbar-light sticky-top bg-light">
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -25,24 +25,28 @@
             <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" href="#jumbo">Story</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#footer">About</a>
           </li>
       </div>
     </nav>
 
     <!-- content -->
-    <div class="jumbotron jumbotron-fluid" style="background:url(./jumbo.jpg) no-repeat; background-size: cover;">
-      <div class="text-center bg-secondary text-light my-5">
-        <button type="button" class="btn btn-primary" onclick="updateMessages();">Tell me a story</button>
-        <p class="lead" id="story-text"></p>
+    <div class="jumbotron jumbotron-fluid" id="jumbo">
+      <div class="text-center bg-secondary text-light my-5" style="opacity:0.8">
+        <button type="button" class="btn btn-primary align-bottom mt-3" onclick="updateMessages();">Tell me a story</button>
+        <hr class="my-4">
+        <p class="lead mb-4" id="story-text"> Now that’s what I call stupid: In my junior year of high school, this guy asked me on a date. He rented a Redbox movie and made a pizza. We were watching the movie and the oven beeped so the pizza was done. He looked me dead in the eye and said, “This is the worst part.” I then watched this boy open the oven and pull the pizza out with his bare hands, rack and all, screaming at the top of his lungs. We never had a second date.</p>
       </div>
     </div>
 
   </main>
 
   <!-- footer-->
-  <footer>
-    <p>Copyright Bastian Sattelberger 2022</p>
+  <footer id="footer">
+    <p class="text-center">Copyright Bastian Sattelberger 2022</p>
   </footer>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

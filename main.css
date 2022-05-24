@@ -1,0 +1,17 @@
+#jumbo{
+    background:url(./jumbo.jpg) no-repeat center center fixed; 
+    background-size: cover; 
+    height: 750px;
+}
+
+@media only screen and (max-width: 768px) {
+    #jumbo{
+        height: 400px;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    #jumbo{
+        height: 500px;
+    }
+}
