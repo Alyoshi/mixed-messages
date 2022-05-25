@@ -1,23 +1,37 @@
-let randomIndex = -1;
-let randomIndexCompare = -1;
+let previousMenu = '';
+let menu = '';
+let backgroundFood = '';
 
-let messagesObject ={
-    _messages: ['France', 'Italy', 'Bavaria','South Africa'],
-    set messages(inputMessage) {
-        this._messages = inputMessage;
-    },
-    getRandomMessage(){
-        //todo: use at least 3 sources for a stupid story and build a string of it, which will be returned (like goat, castle and boat)
-        randomIndexCompare = randomIndex;
-        randomIndex = Math.floor(Math.random()*this._messages.length);
-        while(randomIndex === randomIndexCompare){
-            randomIndex = Math.floor(Math.random()*this._messages.length);
+const createRandomIndex = array => Math.floor(Math.random() * array.length);
+
+let messagesObject = {
+    _carbon: ['rice', 'pasta', 'potatoes', 'bread'],
+    _vegetables: ['zucchini', 'paprika', 'eggplant'],
+    _protein: ['tofu', 'grilled chicken', 'cheese'],
+
+    getRandomMeal() {
+        let randomIndexCarbon = createRandomIndex(this._carbon);
+        let randomIndexVegetables = createRandomIndex(this._vegetables);
+        let randomIndexProtein = createRandomIndex(this._protein);
+        previousMenu = menu;
+        menu = `Today's menu is ${this._protein[randomIndexProtein]} with ${this._vegetables[randomIndexVegetables]} and ${this._carbon[randomIndexCarbon]}.`;
+        while (menu === previousMenu) {
+            randomIndexCarbon = createRandomIndex(this._carbon);
+            randomIndexVegetables = createRandomIndex(this._vegetables);
+            randomIndexProtein = createRandomIndex(this._protein);
         }
-        return this._messages[randomIndex];
+        backgroundFood = this._carbon[randomIndexCarbon];
+        return menu;
     }
 };
 
 const updateMessages = () => {
-const elem = document.getElementById('story-text');
-elem.textContent = messagesObject.getRandomMessage();
+    document.getElementById('story-text').textContent = messagesObject.getRandomMeal();
+
+    switch (backgroundFood) {
+        case 'rice': document.getElementById("jumbo").style.backgroundImage = "url(./sources/rice.jpg)"; break;
+        case 'pasta': document.getElementById("jumbo").style.backgroundImage = "url(./sources/pasta.jpg)"; break;
+        case 'potatoes': document.getElementById("jumbo").style.backgroundImage = "url(./sources/potatoes.jpg)"; break;
+        case 'bread': document.getElementById("jumbo").style.backgroundImage = "url(./sources/bread.jpg)"; break;
+    }
 }
