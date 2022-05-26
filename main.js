@@ -19,6 +19,7 @@ let messagesObject = {
             randomIndexCarbon = createRandomIndex(this._carbon);
             randomIndexVegetables = createRandomIndex(this._vegetables);
             randomIndexProtein = createRandomIndex(this._protein);
+            menu = `Today's menu is ${this._protein[randomIndexProtein]} with ${this._vegetables[randomIndexVegetables]} and ${this._carbon[randomIndexCarbon]}.`;
         }
         backgroundFood = this._carbon[randomIndexCarbon];
         return menu;
